@@ -1,0 +1,59 @@
+{
+  "name": "letter",
+  "version": "1.0.0",
+  "description": "a letter app",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "keywords": [
+    "letter"
+  ],
+  "author": "zhangzp9970",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "electron": "^18.2.3"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "typed.js": "^2.0.12"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "/Users/zhang/source/repos/letter/src/assess/letter.ico"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "letter",
+            "setupIcon": "/Users/zhang/source/repos/letter/src/assess/letter.ico",
+            "iconUrl": "http://localhost/letter.ico"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
